@@ -8,6 +8,33 @@ import java.sql.SQLException;
 import board.model.Member;
 
 public class MemberService {
+	public boolean checkMember(Member member) {
+		DBService dbService = new DBService();
+		Connection conn = dbService.connect();
+		String sql = "SELECT id FROM member where id=? and `password`=?";
+		PreparedStatement pstmt = null;
+		int r = -1;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, member.getId());
+			pstmt.setString(2, member.getPassword());
+			ResultSet rs = pstmt.executeQuery();
+			if (rs.next()) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			dbService.disconnect(conn);
+		}
+		return false;
+	}
+
 	public int idCheck(String id) {
 		DBService dbService = new DBService();
 		Connection conn = dbService.connect();

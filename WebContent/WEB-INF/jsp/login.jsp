@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>login</title>
+<c:import url="head.jsp" />
 </head>
 <body>
 	<c:import url="nav.jsp" />
@@ -28,5 +29,6 @@
 			</div>
 		</form>
 	</div>
+	<c:import url="script.jsp" />
 </body>
 </html>

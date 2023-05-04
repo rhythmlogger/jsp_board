@@ -9,6 +9,10 @@ public class Member {
 	public Member() {
 
 	}
+	public Member(String id, String password) {
+		this.id=id;
+		this.password=password;
+	}
 
 	public Member(String id, String password, String email) {
 		this.id = id;
