@@ -6,10 +6,10 @@ public class Comment {
 	private String contents;
 	private String id;
 
-	public Comment(int num, String contents, String id) {
+	public Comment(int num, String id, String contents) {
 		this.num=num;
-		this.contents=contents;
 		this.id=id;
+		this.contents=contents;
 	}
 	public Comment() {
 		

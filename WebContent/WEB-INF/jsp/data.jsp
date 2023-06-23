@@ -46,19 +46,28 @@
 	<div class="mx-auto" style="width: 500px;">
 		<table class="table">
 			<tr>
-				<th colspan="2">댓글</th>
+				<th class='col-2'>아이디</th>
+				<th class='col-8'>내용</th>
+				<th class='col-2'>삭제</th>
 			</tr>
 			<c:forEach var="comment" items="${commentList}">
 				<tr>
-					<td>${comment.contents}</td>
 					<td>${comment.id }</td>
+					<td>${comment.contents}</td>
+					<td><c:if test="${sessionScope.id eq comment.id}">
+							<form action="delete-comment" method="post">
+								<input type="hidden" name="cnum" value="${comment.cnum}">
+								<input type="hidden" name="num" value="${data.num}"> <input
+									type="submit" value="댓글 삭제" class="btn btn-danger" />
+							</form>
+						</c:if></td>
 				</tr>
 			</c:forEach>
 		</table>
 		<div>
 			<form action="comment" method="post">
 
-				<input type="hidden" name="id" value="${data.id}"> <input
+				<input type="hidden" name="id" value="${sessionScope.id}"> <input
 					type="hidden" name="num" value="${data.num}">
 				<div class="input-group">
 					<input type="text" name="contents" class="form-control"> <input

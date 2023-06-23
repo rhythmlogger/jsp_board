@@ -10,7 +10,28 @@ import java.util.List;
 import board.model.Comment;
 
 public class CommentService {
-
+	public int delete(int cnum) {
+		DBService dbService = new DBService();
+		Connection conn = dbService.connect();
+		String sql = "DELETE FROM `comment` WHERE cnum=?";
+		PreparedStatement pstmt = null;
+		int r = -1;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, cnum);
+			r = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			dbService.disconnect(conn);
+		}
+		return r;
+	}
 	public int insert(Comment comment) {
 		DBService dbService = new DBService();
 		Connection conn = dbService.connect();
