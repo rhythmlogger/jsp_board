@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>list</title>
+<title>글 목록</title>
 <c:import url="head.jsp" />
 </head>
 <body>
@@ -30,10 +31,10 @@
 				</c:forEach>
 			</table>
 		</div>
-		<div>게시글 수 : ${count}</div>
+		<div>게시글 수 : ${count}, 페이지 수 ${Double.valueOf(Math.ceil(count/5)).intValue()} </div>
 		<div>
 			<ul class="pagination justify-content-center">
-				<c:forEach var="num" step="1" end="${count/5}" begin="1">
+				<c:forEach var="num" step="1" end="${Double.valueOf(Math.ceil(count/5)).intValue()}" begin="1">
 					<li class="page-item"><a class="page-link"
 						href="/list?num=${num}">${num}</a></li>
 				</c:forEach>

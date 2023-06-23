@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>register</title>
+<title>회원가입</title>
 <c:import url="head.jsp" />
 <script src="https://code.jquery.com/jquery-3.6.4.min.js">
 	
@@ -58,24 +58,24 @@
 	<form method="post" action="/register" id="form">
 		<fieldset class="mx-auto" style="width: 250px;">
 			<legend>회원가입</legend>
-			<div>id</div>
+			<div>아이디</div>
 			<div class="input-group">
 				<input type="text" class="form-control" name="id" id="id" required
 					minlength="4"> <input type="button" class="btn btn-primary"
 					value="중복확인" id="id_check_button" onclick="id_check()">
 			</div>
-			<div>password</div>
+			<div>비밀번호</div>
 			<div>
 				<input type="password" class="form-control" name="password"
 					id="password" required minlength="4">
 			</div>
-			<div>re-password</div>
+			<div>비밀번호 재입력</div>
 			<div>
 				<input type="password" class="form-control" name="re_password"
 					required id="re_password" minlength="4" onchange="check_password()">
 			</div>
-			<div>e-mail</div>
-			<div>
+			<div>이메일</div>
+			<div>	
 				<input type="email" name="email" class="form-control" required>
 			</div>
 			<div>

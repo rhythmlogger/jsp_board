@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시글 내용</title>
+<title>게시</title>
 <c:import url="head.jsp" />
 </head>
 <body>
