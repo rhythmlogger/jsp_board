@@ -1,4 +1,4 @@
-package board.servlet;
+package board.servlet.member;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -15,37 +15,33 @@ import board.service.MemberService;
 /**
  * Servlet implementation class IndexServlet
  */
-@WebServlet("/register")
-public class RegisterServlet extends HttpServlet {
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public RegisterServlet() {
+	public LoginServlet() {
 	}
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/register.jsp");
-		dispatcher.forward(request, response);
-	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String id = request.getParameter("id").toString();
 		String password = request.getParameter("password").toString();
-		String email = request.getParameter("email").toString();
-		Member member = new Member(id,password,email);
 		MemberService memberService = new MemberService();
-		if (memberService.register(member)>0) {
+		if (memberService.checkMember(new Member(id, password))) {
 			HttpSession session = request.getSession();
+			session.setAttribute("id", id);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
-			session.setAttribute("id",id);
 			dispatcher.forward(request, response);
-			
 		}else {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/register.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			dispatcher.forward(request, response);
 		}
+	}
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }

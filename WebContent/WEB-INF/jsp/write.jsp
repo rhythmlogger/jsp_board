@@ -11,27 +11,35 @@
 <body>
 	<jsp:include page="nav.jsp"></jsp:include>
 	<hr>
-	<div class="p-3">
+	<div class="mx-auto" style="width: 500px;">
 		<form class="p-3" method="post" action="/write" id="form">
 			<fieldset>
 				<legend>게시글 작성</legend>
-				<div>title</div>
-				<div>
+				<div class="input-group">
+					<div class="input-group-text">title</div>
 					<input type="text" class="form-control" name="title" id="title"
 						required>
 				</div>
-				<div>contents</div>
 				<div>
-					<textarea class="form-control" name="contents" id="contents" cols="60"></textarea>
+					<br>
+				</div>
+				<div class="input-group-prepend">
+					<div class="input-group-text">contents</div>
+					<div>
+						<textarea class="form-control" name="contents" id="contents"
+							rows="12"></textarea>
+					</div>
+				</div>
+				<div>
+					<br>
 				</div>
 				<div>
 					<c:choose>
 						<c:when test="${sessionScope.id != null}">
-							<input type="hidden"  name="id" id="id"
-								value="${sessionScope.id}" />
+							<input type="hidden" name="id" id="id" value="${sessionScope.id}" />
 						</c:when>
 						<c:otherwise>
-							<input type="hidden"  name="id" id="id" value="guest" />
+							<input type="hidden" name="id" id="id" value="guest" />
 
 						</c:otherwise>
 					</c:choose>

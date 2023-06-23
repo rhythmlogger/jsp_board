@@ -12,23 +12,28 @@
 
 	<c:import url="nav.jsp" />
 	<hr>
-	<div class="p-3">
+	<div class="mx-auto" style="width:500px;">
 		<div>
 			<table class="table">
+				<tr>
+					<th scope="col">번호</th>
+					<th scope="col">제목</th>
+					<th scope="col">글쓴이</th>
+				</tr>
 				<c:forEach var="data" items="${list}">
 					<tr>
-						<td class="col-1">${data.num}</td>
-						<td class="col-1"><a href="data?num=${data.num}"
+						<td class="col-2">${data.num}</td>
+						<td class="col-8"><a href="data?num=${data.num}"
 							class="text-wrap">${ data.title}</a></td>
-						<td class="col-10">${data.id }</td>
+						<td class="col-2">${data.id }</td>
 					</tr>
 				</c:forEach>
 			</table>
 		</div>
-		<div>count : ${count}</div>
+		<div>게시글 수 : ${count}</div>
 		<div>
 			<ul class="pagination justify-content-center">
-				<c:forEach var="num" step="1" end="${count/5+1}" begin="1">
+				<c:forEach var="num" step="1" end="${count/5}" begin="1">
 					<li class="page-item"><a class="page-link"
 						href="/list?num=${num}">${num}</a></li>
 				</c:forEach>

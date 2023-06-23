@@ -1,4 +1,4 @@
-package board.servlet;
+package board.servlet.member;
 
 import java.io.IOException;
 

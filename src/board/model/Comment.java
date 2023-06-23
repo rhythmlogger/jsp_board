@@ -2,7 +2,7 @@ package board.model;
 
 public class Comment {
 	private int num;
-	private int rnum;
+	private int cnum;
 	private String contents;
 	private String id;
 
@@ -22,14 +22,13 @@ public class Comment {
 		this.num = num;
 	}
 
-	public int getRnum() {
-		return rnum;
-	}
 
-	public void setRnum(int rnum) {
-		this.rnum = rnum;
+	public int getCnum() {
+		return cnum;
 	}
-
+	public void setCnum(int cnum) {
+		this.cnum = cnum;
+	}
 	public String getContents() {
 		return contents;
 	}

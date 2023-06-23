@@ -1,4 +1,4 @@
-package board.servlet;
+package board.servlet.comment;
 
 import java.io.IOException;
 

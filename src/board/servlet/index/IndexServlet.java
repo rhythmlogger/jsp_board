@@ -1,4 +1,4 @@
-package board.servlet;
+package board.servlet.index;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;

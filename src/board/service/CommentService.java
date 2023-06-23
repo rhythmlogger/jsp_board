@@ -39,7 +39,7 @@ public class CommentService {
 	public List<Comment> getList(int num) {
 		DBService dbService = new DBService();
 		Connection conn = dbService.connect();
-		String sql = "SELECT num,rnum, id, contents FROM comment where num=? order by rnum desc";
+		String sql = "SELECT num,cnum, id, contents FROM comment where num=? order by cnum asc";
 		PreparedStatement pstmt = null;
 
 		try {
@@ -50,7 +50,7 @@ public class CommentService {
 			while (rs.next()) {
 				Comment comment = new Comment();
 				comment.setNum(rs.getInt("num"));
-				comment.setRnum(rs.getInt("rnum"));
+				comment.setCnum(rs.getInt("cnum"));
 				comment.setId(rs.getString("id"));
 				comment.setContents(rs.getString("contents"));
 				list.add(comment);

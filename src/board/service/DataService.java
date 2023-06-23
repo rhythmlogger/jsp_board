@@ -60,7 +60,6 @@ public class DataService {
 		return r;
 	}
 
-	
 	public List<Data> getList() {
 		DBService dbService = new DBService();
 		Connection conn = dbService.connect();
@@ -92,6 +91,7 @@ public class DataService {
 		}
 		return null;
 	}
+
 	public List<Data> getList(int start, int count) {
 		DBService dbService = new DBService();
 		Connection conn = dbService.connect();
@@ -155,5 +155,29 @@ public class DataService {
 			dbService.disconnect(conn);
 		}
 		return null;
+	}
+
+	public int delete(int num) {
+		DBService dbService = new DBService();
+		Connection conn = dbService.connect();
+		String sql = "DELETE from `data` where num=?";
+		PreparedStatement pstmt = null;
+		int r = -1;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			r = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			dbService.disconnect(conn);
+		}
+		return r;
+
 	}
 }

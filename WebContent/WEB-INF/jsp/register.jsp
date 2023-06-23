@@ -56,39 +56,38 @@
 	<jsp:include page="nav.jsp"></jsp:include>
 	<hr>
 	<form method="post" action="/register" id="form">
-		<fieldset class="p-3">
-		<legend>회원가입</legend>
-			<div class="p-3">
-				<div>id</div>
-				<div>
-					<input type="text" class="form-control" name="id" id="id" required
-						minlength="4"> <input type="button" class="btn btn-primary" value="중복확인"
-						id="id_check_button" onclick="id_check()">
-				</div>
-				<div>password</div>
-				<div>
-					<input type="password" class="form-control" name="password"
-						id="password" required minlength="4">
-				</div>
-				<div>re-password</div>
-				<div>
-					<input type="password" class="form-control" name="re_password"
-						required id="re_password" minlength="4"
-						onchange="check_password()">
-				</div>
-				<div>e-mail</div>
-				<div>
-					<input type="email" name="email" class="form-control" required>
-				</div>
-				<div>
-					<input type="submit" value="회원가입" class="form-control"
-						id="register_button" />
-				</div>
-				<div>
-					<input type="reset" class="form-control" value="취소" />
-				</div>
+		<fieldset class="mx-auto" style="width: 250px;">
+			<legend>회원가입</legend>
+			<div>id</div>
+			<div class="input-group">
+				<input type="text" class="form-control" name="id" id="id" required
+					minlength="4"> <input type="button" class="btn btn-primary"
+					value="중복확인" id="id_check_button" onclick="id_check()">
+			</div>
+			<div>password</div>
+			<div>
+				<input type="password" class="form-control" name="password"
+					id="password" required minlength="4">
+			</div>
+			<div>re-password</div>
+			<div>
+				<input type="password" class="form-control" name="re_password"
+					required id="re_password" minlength="4" onchange="check_password()">
+			</div>
+			<div>e-mail</div>
+			<div>
+				<input type="email" name="email" class="form-control" required>
+			</div>
+			<div>
+				<br>
+			</div>
+			<div class="mx-auto btn-group" style="width: 250px;">
+				<input type="submit" value="회원가입" class="btn btn-primary"
+					id="register_button" /> <input type="reset"
+					class="btn btn-primary" value="취소" />
 			</div>
 		</fieldset>
+
 	</form>
 	<c:import url="script.jsp" />
 </body>
