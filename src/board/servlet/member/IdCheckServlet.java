@@ -1,4 +1,4 @@
-package board.servlet.member;
+	package board.servlet.member;
 
 import java.io.IOException;
 
@@ -15,7 +15,7 @@ import board.service.MemberService;
 /**
  * Servlet implementation class IndexServlet
  */
-@WebServlet("/id_check")
+@WebServlet("/id-check")
 public class IdCheckServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -24,7 +24,7 @@ public class IdCheckServlet extends HttpServlet {
 		String id = request.getParameter("id").toString();
 		MemberService memberService = new MemberService();
 		memberService.idCheck(id);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/id_check.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/id-check.jsp");
 		request.setAttribute("result", memberService.idCheck(id));
 		dispatcher.forward(request, response);
 	}

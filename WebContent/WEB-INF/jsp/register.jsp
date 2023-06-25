@@ -20,7 +20,7 @@
 			return;
 		} else {
 			$.ajax({
-				url : "/id_check", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
+				url : "/id-check", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
 				data : {
 					"id" : id
 				},

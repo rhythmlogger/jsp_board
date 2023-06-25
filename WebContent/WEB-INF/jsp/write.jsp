@@ -7,6 +7,10 @@
 <meta charset="UTF-8">
 <title>register</title>
 <c:import url="head.jsp" />
+<script
+	src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+<script
+	src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/translations/ko.js"></script>
 </head>
 <body>
 	<jsp:include page="nav.jsp"></jsp:include>
@@ -27,7 +31,7 @@
 					<div class="input-group-text">contents</div>
 					<div>
 						<textarea class="form-control" name="contents" id="contents"
-							rows="12"></textarea>
+							rows="24"></textarea>
 					</div>
 				</div>
 				<div>
@@ -51,7 +55,14 @@
 			</fieldset>
 		</form>
 	</div>
-
+	<script>
+		ClassicEditor.create(document.querySelector('#contents'), {
+			language : "ko",
+			 ckfinder: {
+			        uploadUrl: '/data-image'
+		    }
+		})
+	</script>
 	<c:import url="script.jsp" />
 </body>
 
