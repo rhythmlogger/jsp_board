@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 @WebServlet("/data-image")
-public class DataImageServlet extends HttpServlet {
+public class UploadImageServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String savePath = "C:/Workspace/jsp_board/WebContent/images/";
@@ -33,7 +33,7 @@ public class DataImageServlet extends HttpServlet {
 		String imageUrl = "/images/" + fileName; // Adjust the image URL as per your setup
 		String jsonResponse = "{\"url\": \"" + imageUrl + "\", \"uploaded\": 1, \"fileName\": \"" + fileName + "\"}";
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

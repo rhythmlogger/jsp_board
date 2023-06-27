@@ -60,7 +60,10 @@
 			language : "ko",
 			 ckfinder: {
 			        uploadUrl: '/data-image'
-		    }
+		    },
+		    mediaEmbed: {
+		        previewsInData:true
+		    },
 		})
 	</script>
 	<c:import url="script.jsp" />
