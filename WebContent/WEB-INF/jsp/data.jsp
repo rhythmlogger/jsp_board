@@ -35,10 +35,13 @@
 		</div>
 	</div>
 	<div class="mx-auto" style="width: 500px;">
+	<c:if test="${sessionScope.id eq data.id}">
 		<form action="delete-data" method="POST">
-			<input type="hidden" name="num" value="${data.num}" /> <input
+			<input type="hidden" name="num" value="${data.num}" />
+			<input
 				type="submit" class="btn btn-danger" value="글 삭제">
 		</form>
+	</c:if>
 	</div>
 	<div>
 		<br>
