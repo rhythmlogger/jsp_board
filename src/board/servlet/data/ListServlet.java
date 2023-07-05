@@ -40,7 +40,6 @@ public class ListServlet extends HttpServlet {
 			} else {
 				num = 1;
 			}
-
 			List<Data> list = dataService.getList((num - 1) * 5, 5);
 			request.setAttribute("list", list);
 			request.setAttribute("count", dataService.count());

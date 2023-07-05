@@ -5,7 +5,7 @@ public class Data {
 		
 	}
 	private int hit;
-	private int num;
+	private int num; 
 	private String title;
 	private String contents;
 	private String id;
@@ -15,6 +15,8 @@ public class Data {
 		this.contents=contents;
 		this.id=id;
 	}
+	
+
 	public int getNum() {
 		return num;
 	}

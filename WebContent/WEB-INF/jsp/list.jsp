@@ -20,7 +20,7 @@
 					<th scope="col">번호</th>
 					<th scope="col">제목</th>
 					<th scope="col">글쓴이</th>
-					<th scope="col">조회수</th>
+					<th scope="col">조회</th>
 				</tr>
 				<c:forEach var="data" items="${list}">
 					<tr>

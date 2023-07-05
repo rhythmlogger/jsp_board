@@ -16,13 +16,15 @@
 				<th scope="col">번호</th>
 				<th scope="col">제목</th>
 				<th scope="col">글쓴이</th>
-				<th scope="col">조회수</th>
+				<th scope="col">조회</th>
+				<th scope="col">추천</th>
 			</tr>
 			<tr>
 				<td>${data.num}</td>
 				<td>${data.title}</td>
 				<td>${data.id }</td>
 				<td>${data.hit }</td>
+				<td>${recommendTotal }</td>
 			</tr>
 		</table>
 		<div>
@@ -35,15 +37,20 @@
 				</tr>
 			</table>
 		</div>
+		<div>
+		<c:choose>
+			<c:when test="${sessionScope.id eq recommend.id}">추천함</c:when>
+			<c:otherwise>추천하지않음</c:otherwise>
+		</c:choose>
+		</div>
 	</div>
 	<div class="mx-auto" style="width: 500px;">
-	<c:if test="${sessionScope.id eq data.id}">
-		<form action="delete-data" method="POST">
-			<input type="hidden" name="num" value="${data.num}" />
-			<input
-				type="submit" class="btn btn-danger" value="글 삭제">
-		</form>
-	</c:if>
+		<c:if test="${sessionScope.id eq data.id}">
+			<form action="delete-data" method="POST">
+				<input type="hidden" name="num" value="${data.num}" /> <input
+					type="submit" class="btn btn-danger" value="글 삭제">
+			</form>
+		</c:if>
 	</div>
 	<div>
 		<br>
