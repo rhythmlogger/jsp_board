@@ -4,10 +4,12 @@ public class Data {
 	public Data() {
 		
 	}
+	private int hit;
 	private int num;
 	private String title;
 	private String contents;
 	private String id;
+	
 	public Data(String id, String title, String contents) {
 		this.title=title;
 		this.contents=contents;
@@ -36,6 +38,12 @@ public class Data {
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public int getHit() {
+		return hit;
+	}
+	public void setHit(int hit) {
+		this.hit = hit;
 	}
 	
 }

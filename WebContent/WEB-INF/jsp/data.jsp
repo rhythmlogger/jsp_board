@@ -16,11 +16,13 @@
 				<th scope="col">번호</th>
 				<th scope="col">제목</th>
 				<th scope="col">글쓴이</th>
+				<th scope="col">조회수</th>
 			</tr>
 			<tr>
 				<td>${data.num}</td>
 				<td>${data.title}</td>
 				<td>${data.id }</td>
+				<td>${data.hit }</td>
 			</tr>
 		</table>
 		<div>

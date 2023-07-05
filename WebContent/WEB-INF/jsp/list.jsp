@@ -20,13 +20,15 @@
 					<th scope="col">번호</th>
 					<th scope="col">제목</th>
 					<th scope="col">글쓴이</th>
+					<th scope="col">조회수</th>
 				</tr>
 				<c:forEach var="data" items="${list}">
 					<tr>
 						<td class="col-2">${data.num}</td>
-						<td class="col-8"><a href="data?num=${data.num}"
+						<td class="col-6"><a href="data?num=${data.num}"
 							class="text-wrap">${ data.title}</a></td>
 						<td class="col-2">${data.id }</td>
+						<td class="col-2">${data.hit }</td>
 					</tr>
 				</c:forEach>
 			</table>

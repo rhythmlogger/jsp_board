@@ -33,8 +33,8 @@ public class DataServlet extends HttpServlet {
 			CommentService commentService = new CommentService();
 			int num = Integer.parseInt(request.getParameter("num").toString());
 			List<Comment> commentList = commentService.getList(num);
+			dataService.hit(num);
 			Data data = dataService.getData(num);
-			
 			request.setAttribute("data", data);
 			request.setAttribute("commentList", commentList);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/data.jsp");
